@@ -1,81 +1,211 @@
 # OpenClaw CA Add-on
 
-Yes — this is the better long-term direction.
+A practical Chartered Accountant add-on for OpenClaw.
 
-Instead of keeping the former CAClaw fork, we can keep **OpenClaw as the product core** and ship the Chartered Accountant layer as an **add-on plugin**.
+This project adds a CA-focused workflow pack to **OpenClaw** so a Chartered Accountant or CA firm can use OpenClaw for recurring professional work like:
 
-This folder is the new isolated home for that approach.
+- GST working and review
+- TDS working and follow-up
+- income-tax preparation support
+- audit planning and evidence tracking
+- financial reporting checklists
+- ROC and company-law compliance support
 
-## What belongs in this folder
+This is **not** a separate app and it is **not** a replacement for professional judgment.
+It is an add-on you install into OpenClaw so OpenClaw can assist you with CA work in a more structured way.
 
-Keep CA-specific work here when possible:
+---
 
-- CA workflow skills
-- CA prompts, checklists, and templates
-- MCP server recipes and integration contracts
-- future CA runtime services that can be added through the plugin system
-- lightweight docs and assets that explain how the CA layer should behave inside OpenClaw
+## Who this is for
 
-## What should not stay forked long-term
+This add-on is for:
 
-These are the parts of the current repo that are **not ideal** for the add-on approach and should be removed or rethought later:
+- individual Chartered Accountants
+- CA firms
+- article assistants and teams working under CA supervision
+- firms that want repeatable checklists, prompts, and workflow guidance inside OpenClaw
 
-- product-wide renaming from `OpenClaw` to `CAClaw`
-- CLI/app/UI copy changes that replace the upstream product identity
-- mobile and desktop display-name changes
-- repo-wide branding assets that only exist for the forked product
-- fork-maintenance docs that assume the former CAClaw fork is the whole product
+If you already use OpenClaw and want it to feel more useful for real CA work, this add-on is for you.
 
-## Practical direction
+---
 
-The clean target state is:
+## What this add-on helps with
 
-1. Keep upstream OpenClaw mostly unchanged.
-2. Install this plugin.
-3. Let this plugin provide the CA workflow pack.
-4. Add future CA MCP tools and integrations here.
-5. Present it externally as "OpenClaw for CAs" without needing a deep product fork.
+After installing it, OpenClaw can help you structure work like:
 
-## Install in a real OpenClaw deployment
+### GST
+- return-preparation checklists
+- reconciliation support
+- working-paper structure
+- client information request lists
+- review questions before filing
 
-Use the standard OpenClaw plugin installer.
+### TDS
+- deduction review support
+- due-date follow-up lists
+- checklist-based preparation
+- missing-data request lists
 
-### Option A: install from a local checkout
+### Income Tax
+- preparation checklists
+- document collection lists
+- return review prompts
+- case-wise work organization
 
-Clone this repo wherever you keep local plugins, then install it by path:
+### Audit
+- planning support
+- evidence request lists
+- workpaper preparation structure
+- review and follow-up prompts
+
+### Financial Reporting
+- close checklists
+- statement preparation support
+- schedule and note preparation scaffolds
+- review structure for reporting work
+
+### ROC and Compliance
+- filing-readiness checklists
+- compliance document request lists
+- recurring ROC support structure
+- corporate-compliance task guidance
+
+---
+
+## What is included
+
+This repository currently includes:
+
+- `ca-workbench` — main CA router skill
+- `ca-gst`
+- `ca-tds`
+- `ca-income-tax`
+- `ca-audit`
+- `ca-financial-reporting`
+- `ca-roc-compliance`
+- supporting CA docs
+- CA-specific assets and reference material
+
+---
+
+## Important boundary
+
+This add-on is designed to **assist** CA work, not to replace review or sign-off.
+
+It does **not** claim to:
+
+- file returns automatically
+- guarantee statutory correctness
+- replace professional judgment
+- replace audit judgment
+- replace legal review
+
+Think of it as a well-organized CA assistant layer inside OpenClaw.
+
+---
+
+## What you need before installing
+
+Before using this add-on, you need:
+
+1. **OpenClaw installed and working**
+2. access to your terminal on the system where OpenClaw runs
+3. Git installed if you want to clone this repository directly from GitHub
+
+If OpenClaw is not installed yet, install OpenClaw first and make sure the command below works:
 
 ```bash
-openclaw plugins install ./CAClaw-ext
+openclaw --help
+```
+
+---
+
+## Install from GitHub directly
+
+This is the simplest GitHub-based setup.
+
+### Step 1: clone this repository
+
+```bash
+git clone https://github.com/shaileshopenclaw/CAClaw-ext.git
+cd CAClaw-ext
+```
+
+### Step 2: install the add-on into OpenClaw
+
+From inside the cloned folder, run:
+
+```bash
+openclaw plugins install .
+```
+
+This tells OpenClaw to install the plugin from the current local folder.
+
+### Step 3: enable the add-on
+
+```bash
+openclaw plugins enable caclaw
+```
+
+### Step 4: inspect the install
+
+```bash
+openclaw plugins inspect caclaw
+```
+
+You should see the plugin metadata and the CA skill pack.
+
+### Step 5: restart the OpenClaw gateway
+
+```bash
+openclaw gateway restart
+```
+
+After restart, the CA add-on is available to OpenClaw.
+
+---
+
+## Development-style install from GitHub clone
+
+If you want OpenClaw to use this folder directly without copying it, use link mode:
+
+```bash
+git clone https://github.com/shaileshopenclaw/CAClaw-ext.git
+cd CAClaw-ext
+openclaw plugins install -l .
 openclaw plugins enable caclaw
 openclaw plugins inspect caclaw
 openclaw gateway restart
 ```
 
-### Option B: link a local checkout for development
+This is useful when you want to keep updating the local checkout.
 
-Use `--link` when you want OpenClaw to load the plugin from your working tree without copying files:
+---
+
+## How to confirm it is installed correctly
+
+Run:
 
 ```bash
-openclaw plugins install -l ./CAClaw-ext
-openclaw plugins enable caclaw
+openclaw plugins list
 openclaw plugins inspect caclaw
-openclaw gateway restart
 ```
 
-### What to expect after install
+You should see:
 
-- the plugin id is `caclaw`
-- OpenClaw should show it in `openclaw plugins list`
-- `openclaw plugins inspect caclaw` should show the plugin metadata and shipped skills
-- the CA skill pack becomes available through the normal OpenClaw skill surfaces
+- plugin id: `caclaw`
+- the plugin listed in OpenClaw
+- CA skills available through the plugin
 
-## Use inside OpenClaw
+---
 
-Start with the router skill:
+## How to use it in OpenClaw
+
+Start with the main CA router skill:
 
 - `ca-workbench`
 
-Then use the domain skills as needed:
+Then use the specific workflow skills when needed:
 
 - `ca-gst`
 - `ca-tds`
@@ -84,22 +214,81 @@ Then use the domain skills as needed:
 - `ca-financial-reporting`
 - `ca-roc-compliance`
 
-## What is already included here
+A simple practical approach is:
 
-This extraction moves the CA starter workflow pack, CA reference docs, and CA brand assets into one isolated plugin folder:
+1. open OpenClaw
+2. tell it the work area
+3. ask for a checklist, preparation plan, document request list, or review structure
+4. use the output as your working draft
+5. review professionally before final use
 
-- `skills/ca-workbench`
-- `skills/ca-gst`
-- `skills/ca-tds`
-- `skills/ca-income-tax`
-- `skills/ca-audit`
-- `skills/ca-financial-reporting`
-- `skills/ca-roc-compliance`
-- `docs/`
-- `assets/`
+---
 
-## What to do next
+## Example prompts a CA can use
 
-When you are ready, the next cleanup step is to move any remaining CA-only assets into this folder or delete them from the fork if they are no longer needed.
+### GST
+- "Prepare a GST filing checklist for a monthly client with missing purchase data."
+- "Give me a GST reconciliation workplan for this month."
 
-See `MIGRATION.md` for the keep-vs-delete map.
+### TDS
+- "Create a TDS deduction review checklist for salary and contractor payments."
+- "Draft a missing-information follow-up list for TDS working."
+
+### Income Tax
+- "Give me an income-tax preparation checklist for a proprietor client."
+- "Make a document request list for return preparation."
+
+### Audit
+- "Prepare an audit evidence request list for a trading company."
+- "Give me a workpaper preparation checklist for statutory audit planning."
+
+### Financial Reporting
+- "Create a year-end financial reporting checklist for a small company."
+- "Give me a schedule preparation structure for finalization work."
+
+### ROC / Compliance
+- "Prepare an ROC compliance checklist for a private limited company."
+- "Make a filing-readiness checklist for corporate compliance review."
+
+---
+
+## If something does not work
+
+Try these checks:
+
+```bash
+openclaw plugins inspect caclaw
+openclaw plugins list
+openclaw plugins doctor
+```
+
+Then restart the gateway again:
+
+```bash
+openclaw gateway restart
+```
+
+If OpenClaw still does not load the add-on, uninstall and reinstall from the cloned folder.
+
+---
+
+## Project direction
+
+The goal is simple:
+
+- keep **OpenClaw** as the main product
+- keep this repository as the **CA specialization layer**
+- make OpenClaw more useful for Chartered Accountants without requiring a deep product fork
+
+---
+
+## Repository
+
+GitHub repository:
+
+- https://github.com/shaileshopenclaw/CAClaw-ext
+
+OpenClaw plugin install docs:
+
+- https://docs.openclaw.ai/cli/plugins
+- https://docs.openclaw.ai/tools/plugin
