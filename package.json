@@ -1,0 +1,12 @@
+{
+  "name": "@openclaw/caclaw-plugin",
+  "version": "2026.3.26",
+  "private": true,
+  "description": "OpenClaw Chartered Accountant add-on with workflow pack and integration rails",
+  "type": "module",
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}
