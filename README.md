@@ -96,6 +96,8 @@ If you already use OpenClaw and want it to feel more useful for real CA work, CA
 - case-wise work organization
 
 ### Audit
+- audit-type routing through a main audit branch
+- statutory audit support through a dedicated statutory-audit branch
 - planning support
 - evidence request lists
 - workpaper preparation structure
@@ -140,6 +142,7 @@ This repository currently includes:
 - `ca-tds`
 - `ca-income-tax`
 - `ca-audit`
+- `ca-audit-statutory`
 - `ca-financial-reporting`
 - `ca-roc-compliance`
 - supporting CA docs
@@ -268,6 +271,7 @@ Then use the specific workflow skills when needed:
 - `ca-tds`
 - `ca-income-tax`
 - `ca-audit`
+- `ca-audit-statutory`
 - `ca-financial-reporting`
 - `ca-roc-compliance`
 

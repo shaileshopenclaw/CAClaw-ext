@@ -14,7 +14,12 @@ Use for TDS review, follow-up, preparation support, and due-date readiness.
 Use for tax-preparation support, document collection, and return-review structure.
 
 ### Audit
-Use for audit planning, evidence requests, workpaper support, and review structure.
+Use for audit planning, evidence requests, workpaper support, review structure, and audit-type routing.
+
+Current audit branching:
+
+- `ca-audit` = main audit branch
+- `ca-audit-statutory` = dedicated statutory-audit branch
 
 ### Financial Reporting
 Use for close checklists, schedule preparation, note drafting, and reporting review support.

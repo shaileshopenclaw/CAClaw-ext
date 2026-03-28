@@ -1,21 +1,29 @@
 ---
 name: ca-audit
-description: Audit starter workflow for the OpenClaw CA add-on. Use when the user needs audit planning support, evidence request lists, workpaper preparation checklists, review prompts, or follow-up structure.
+description: Audit main branch for CAClaw. Use when the user needs audit help and you first need to identify the audit type before routing into the right audit workflow.
 ---
 
-# CA Audit Starter Workflow
+# CA Audit Main Branch
 
-Use this skill for audit and assurance preparation support.
+Use this skill as the **main audit branch**.
 
 ## What to do
 
-1. Identify whether the user needs planning, evidence collection, workpaper prep, or review support.
-2. Read `references/audit.md` for workflow scope and boundaries.
-3. Use `assets/audit-checklist.md` when a reusable audit scaffold would help.
-4. Keep the workflow guidance-first and review-oriented.
+1. First identify the audit type.
+2. Common audit branches include:
+   - statutory audit
+   - internal audit
+   - tax audit
+   - due diligence review
+   - forensic or investigation work
+   - limited review or certification support
+3. If the work is **statutory audit**, use the dedicated `ca-audit-statutory` branch.
+4. If the work is another audit type, keep the guidance general for now and clarify the exact audit objective before proceeding.
+5. Use `references/audit-types.md` to structure the branching decision.
+6. Use `assets/audit-checklist.md` when the user needs a simple audit prep checklist.
 
 ## Boundaries
 
-- No claim that OpenClaw performs the audit autonomously.
-- No promise that the checklist replaces audit judgment.
-- Keep outputs suitable for human review and adaptation.
+- Do not assume every audit request is statutory audit.
+- Do not imply final assurance conclusions are produced automatically.
+- Keep outputs review-oriented and human-supervised.
