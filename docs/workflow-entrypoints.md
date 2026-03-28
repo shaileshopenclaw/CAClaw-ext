@@ -1,55 +1,72 @@
----
-summary: "How users discover and start the Phase 4 CA starter workflow pack"
-read_when:
-  - You want to know where the CA workflow pack is surfaced in the product
-  - You are extending the workflow discovery experience
-title: "CA Workflow Entrypoints"
----
+# CA Workflow Entrypoints
 
-# CA workflow entrypoints
+This page explains the simplest way for a Chartered Accountant to start using the add-on inside OpenClaw.
 
-> Historical note: This page was migrated from the former CAClaw fork. Read "CAClaw" here as the OpenClaw CA add-on unless the page is explicitly describing that old fork history.
+## The main starting point
 
+Start with:
 
-Phase 4 keeps workflow discovery lightweight. Users should find the starter pack in the places they already use, without a new workflow engine.
+- `ca-workbench`
 
-## Primary entrypoints
+This is the main CA router skill.
 
-### Overview starter-pack section
+Its job is to understand what kind of CA work you are doing and then guide you toward the right workflow.
 
-The overview now includes a CA starter-pack section that points users to the six workflow domains:
+## When to use each skill
 
-- GST work
-- TDS work
-- Income tax
-- Audit and review
-- Financial reporting
-- ROC and compliance
+### Use `ca-workbench` when
+- you are not sure which CA skill to start with
+- your task touches more than one area
+- you want OpenClaw to route the work for you
 
-This is the first and most visible entrypoint for the workflow pack.
+### Use `ca-gst` when
+- you are doing GST preparation or review
+- you need reconciliation help
+- you want a GST checklist or client request list
 
-### Skills surface
+### Use `ca-tds` when
+- you are doing TDS working or review
+- you need deduction review support
+- you want a follow-up list for missing data
 
-The domain skills themselves live in `skills/` and are the canonical pack structure:
+### Use `ca-income-tax` when
+- you are preparing or reviewing income-tax work
+- you need a document request list
+- you want a return-preparation checklist
 
-- `extensions/caclaw/skills/ca-gst/`
-- `extensions/caclaw/skills/ca-tds/`
-- `extensions/caclaw/skills/ca-income-tax/`
-- `extensions/caclaw/skills/ca-audit/`
-- `extensions/caclaw/skills/ca-financial-reporting/`
-- `extensions/caclaw/skills/ca-roc-compliance/`
+### Use `ca-audit` when
+- you are planning an audit
+- you need an evidence request list
+- you want a workpaper preparation structure
 
-The overview entrypoint should lead users into these skill-backed starter packs rather than into a separate custom workflow subsystem.
+### Use `ca-financial-reporting` when
+- you are finalizing accounts
+- you need a close checklist
+- you want schedule and note preparation support
 
-## What users get from a starter pack
+### Use `ca-roc-compliance` when
+- you are handling ROC or corporate-compliance work
+- you need filing-readiness checklists
+- you need compliance document request lists
 
-Each starter pack gives the user:
+## Simple practical workflow
 
-- domain-specific guidance
-- a reusable checklist
-- a starting prompt or preparation structure
-- clear boundaries on what CAClaw is and is not doing
+A normal CA workflow inside OpenClaw can look like this:
 
-## Design rule
+1. tell OpenClaw the work area
+2. ask for a checklist, workplan, review structure, or document request list
+3. adapt the output to the client or case
+4. review it professionally
+5. use it as your working draft, not as an automatic final answer
 
-These are **starter packs**, not finished workflow automation. They help the user start work faster, gather the right inputs, and stay organized before later phases add deeper workflow or integration layers.
+## Best kinds of requests
+
+This add-on works best when you ask for:
+
+- checklists
+- preparation plans
+- missing-document follow-up lists
+- review questions
+- workpaper structures
+- recurring process drafts
+

@@ -1,51 +1,40 @@
----
-summary: "Compliance-wise workstream model for connecting CA starter workflows to future client and integration organization"
-read_when:
-  - You are mapping CA work around compliance categories
-  - You need the Phase 5 workstream dimension
-title: "CA Compliance Workstreams"
----
+# CA Compliance Workstreams
 
-# CA compliance workstreams
+This page explains the compliance-wise side of CA work.
 
-> Historical note: This page was migrated from the former CAClaw fork. Read "CAClaw" here as the OpenClaw CA add-on unless the page is explicitly describing that old fork history.
-
-
-The compliance/workstream dimension is the second organizing lens in CAClaw. It groups work by the kind of obligation or deliverable rather than by client name.
-
-## Core workstreams
-
-Use the existing Phase 4 taxonomy as the compliance backbone:
+A compliance workstream is a repeatable work area such as:
 
 - GST
 - TDS
-- Income tax
-- Audit and review
-- Financial reporting
-- ROC and commercial-law support
-
-## What a workstream should hold
-
-Each workstream should be able to connect to:
-
-- the relevant starter workflow pack
-- reusable checklists and templates
-- client contexts that currently need that workstream
-- future integrations or MCP tools appropriate to that workstream
-- future governance rules if the work becomes automation-heavy
+- income tax
+- audit
+- financial reporting
+- ROC or company-law compliance
 
 ## Why this matters
 
-CA work is often repeated across many clients. The workstream lens lets CAClaw:
+Many CA tasks repeat across many clients.
 
-- reuse workflow assets across clients
-- keep the terminology and task structure consistent
-- attach future tools to the correct domain without rebuilding the model each time
+So it is useful to think in terms of:
 
-## Relationship to client contexts
+- one workstream
+- many clients under that workstream
 
-Client context answers: "Whose work is this?"
+Example:
 
-Compliance context answers: "What kind of work is this?"
+- GST workstream → all clients with GST follow-up this month
+- TDS workstream → all clients where deduction review is pending
+- audit workstream → all clients currently in audit planning or evidence collection
 
-CAClaw needs both at the same time to feel useful in real practice.
+## What OpenClaw should help with here
+
+In a compliance-wise view, OpenClaw should help you:
+
+- start from the correct CA skill
+- produce the right checklist or follow-up structure
+- connect the same type of work across multiple clients
+
+## Best use
+
+This approach is especially useful when a CA team works in cycles and batches.
+

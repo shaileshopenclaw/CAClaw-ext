@@ -1,79 +1,54 @@
----
-summary: "Phase 5 model for organizing CAClaw work around clients and compliance workstreams"
-read_when:
-  - You are designing client-wise or compliance-wise CAClaw organization
-  - You need the canonical Phase 5 workspace model
-title: "CA Client Workspace Model"
----
+# CA Client Workspace Model
 
-# CA client workspace model
+This page explains how to think about organizing CA work in the add-on.
 
-> Historical note: This page was migrated from the former CAClaw fork. Read "CAClaw" here as the OpenClaw CA add-on unless the page is explicitly describing that old fork history.
+A CA usually thinks in two ways:
 
+- by **client**
+- by **compliance or work type**
 
-Phase 5 adds an organizational layer on top of the existing CAClaw workspace and session model. It does not replace OpenClaw workspaces or sessions. It tells CAClaw how to group real work in a way that matches practice.
+The add-on should support both.
 
-## Two first-class lenses
+## 1. Client-wise view
 
-### Client-wise
+Use this when your work starts from a client.
 
-Use this lens when the CA is working for a specific client and needs a single place to see:
+You want to see things like:
 
-- active work areas for that client
-- recent conversations and follow-up
-- relevant starter workflow packs
-- future integrations, documents, and reminders tied to that client
+- what work is active for that client
+- which compliance areas matter for that client
+- what follow-up is pending
+- which workflow pack is relevant next
 
-### Compliance-wise
+## 2. Compliance-wise view
 
-Use this lens when the CA is working from a compliance obligation first, such as GST, TDS, audit, financial reporting, or ROC/commercial-law support, and then needs to connect that work back to one or more clients.
+Use this when your work starts from the task type.
 
-## How this fits the current architecture
+Examples:
 
-- **Workspace stays the root container**: existing OpenClaw/CAClaw workspace mechanics remain intact.
-- **Sessions remain the runtime conversation unit**: Phase 5 does not replace session keys or session storage.
-- **Skills remain the workflow pack seam**: the Phase 4 starter workflows remain the domain layer.
-- **Client/compliance meaning becomes an overlay**: this phase defines how the product should organize and surface work, not a new runtime core.
+- GST
+- TDS
+- audit
+- financial reporting
+- ROC compliance
 
-## Model components
+In that case, you want to move from the workstream to the relevant clients.
 
-### Client profile
+## Why both views matter
 
-A client context should be able to point to:
+Real CA work is repetitive across many clients.
 
-- the relevant compliance/workstream categories
-- current workflow pack entrypoints
-- recent work history
-- future integrations or secure tools that belong to that client
+Sometimes you think:
+- "What is pending for this client?"
 
-### Compliance workstream
+Sometimes you think:
+- "Which clients still need GST follow-up?"
 
-A compliance/workstream context should be able to point to:
+The add-on should support both directions.
 
-- the relevant starter skill pack
-- recurring work patterns
-- related clients
-- future tool or integration rails for that work type
+## What this does not mean
 
-### Cross-linking rule
+This does **not** mean the add-on is trying to become a full practice-management product.
 
-The model works only if clients and compliance workstreams can reference each other. A CA should be able to move in both directions:
+The goal is only to help organize OpenClaw-based CA work in a more natural way.
 
-- client → relevant compliance work
-- compliance work → relevant clients
-
-## Design constraints
-
-- Keep the model lightweight and additive.
-- Do not turn Phase 5 into a practice-management product.
-- Do not imply structured statutory filing automation.
-- Keep everything compatible with the current workspace/session/plugin model.
-
-## Future use
-
-This model is the bridge between:
-
-- Phase 4 starter workflow content
-- future client-wise organization
-- future MCP/plugin integrations
-- future high-trust automation governance

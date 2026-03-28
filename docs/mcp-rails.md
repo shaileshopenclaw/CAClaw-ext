@@ -1,41 +1,34 @@
----
-summary: "How future CA tools should use MCP as an integration rail in CAClaw"
-read_when:
-  - You are evaluating an MCP-based CA integration
-  - You need the Phase 5 MCP guidance
-title: "CA MCP Rails"
----
+# CA MCP Rails
 
-# CA MCP rails
+This page explains where MCP fits into the CA add-on.
 
-> Historical note: This page was migrated from the former CAClaw fork. Read "CAClaw" here as the OpenClaw CA add-on unless the page is explicitly describing that old fork history.
+Use MCP when OpenClaw needs a controlled connection to an external tool or service.
 
+## Good future MCP use cases
 
-Use MCP for future CA integrations when the capability is best expressed as an external tool or service boundary.
+Examples may include:
 
-## Good MCP candidates
+- document retrieval tools
+- controlled data-reading tools
+- reconciliation helper services
+- secure lookup utilities
+- limited workflow-specific service bridges
 
-- document retrieval or parsing services
-- review helpers that operate through explicit tool calls
-- controlled portal-side read or preparation helpers
-- structured compliance utilities that need clear invocation boundaries
+## When MCP is the right choice
 
-## MCP expectations
+MCP is a good fit when:
 
-An MCP-based CA integration should define:
+- the capability comes from an external system
+- OpenClaw should call it as a tool
+- the boundary should stay explicit and reviewable
 
-- what service it talks to
-- what data boundary it crosses
-- how auth/secrets are handled
-- what user-facing surface invokes it
-- how outputs are reviewed before trust is increased
+## When MCP is not the first choice
 
-## What MCP is not for
+Do not use MCP when the need is only:
 
-- hiding risky automation behind a vague tool name
-- bypassing governance for high-trust tasks
-- replacing the workflow pack or client/compliance model
+- a checklist
+- a prompt pack
+- simple workflow guidance
 
-## Repo fit
+That belongs in skills, not MCP.
 
-CAClaw already has MCP configuration surfaces. Phase 5’s job is to make future CA MCP work explicit and reviewable before any real integrations land.

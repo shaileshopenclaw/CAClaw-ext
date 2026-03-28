@@ -1,16 +1,43 @@
-# CA Add-on Reference Docs
+# CA Add-on Docs
 
-These docs were migrated out of the former fork-wide `docs/caclaw/` tree so the Chartered Accountant layer can live under `extensions/caclaw/` instead of reshaping the whole OpenClaw product.
+This folder explains the CA add-on in plain language.
 
-## Kept as plugin-local references
+If you are a Chartered Accountant or a team member using this add-on, start here.
 
-- workflow pack structure and taxonomy
-- workflow entrypoints and verification notes
-- client and compliance workspace concepts
-- integration rails, MCP rails, plugin rails, and governance guidance
-- prior brand and UX notes kept only as historical reference while the add-on is normalized
+## Best reading order
 
-## Not the long-term shape
+1. [`../README.md`](../README.md) — what this add-on does and how to install it
+2. [`workflow-entrypoints.md`](workflow-entrypoints.md) — how to start using it in OpenClaw
+3. [`workflow-pack-structure.md`](workflow-pack-structure.md) — what skills, references, and assets are included
+4. [`client-workspace-model.md`](client-workspace-model.md) — how to think about client-wise and compliance-wise work
+5. [`integration-rails.md`](integration-rails.md) — how future integrations should be added safely
+6. [`automation-governance.md`](automation-governance.md) — what should stay review-based and what should not be automated casually
 
-Some documents in this folder still use the old CAClaw naming because they were migrated from the fork.
-They now belong to the add-on layer and can be simplified later without touching the upstream product docs.
+## Main doc groups
+
+### Everyday usage
+- [`workflow-entrypoints.md`](workflow-entrypoints.md)
+- [`workflow-pack-structure.md`](workflow-pack-structure.md)
+- [`workflow-taxonomy.md`](workflow-taxonomy.md)
+- [`workflow-verification.md`](workflow-verification.md)
+
+### Organizing CA work
+- [`client-workspace-model.md`](client-workspace-model.md)
+- [`client-workspace-flows.md`](client-workspace-flows.md)
+- [`compliance-workstreams.md`](compliance-workstreams.md)
+
+### Future growth
+- [`integration-rails.md`](integration-rails.md)
+- [`mcp-rails.md`](mcp-rails.md)
+- [`plugin-rails.md`](plugin-rails.md)
+- [`integration-contract-template.md`](integration-contract-template.md)
+- [`automation-governance.md`](automation-governance.md)
+
+### Historical reference
+These documents came from the earlier CAClaw fork work and are still useful as background:
+
+- brand and UX reference docs
+- surface inventory and customization seam docs
+- upstream baseline and upstream sync docs
+
+You do not need those historical docs to install and use the add-on.

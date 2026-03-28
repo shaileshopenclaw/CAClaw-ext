@@ -1,36 +1,51 @@
----
-summary: "Top-level guidance for where future CA integrations belong in CAClaw"
-read_when:
-  - You are evaluating where a future CA integration should land
-  - You need the canonical integration-rails overview
-title: "CA Integration Rails"
----
+# CA Integration Rails
 
-# CA integration rails
+This page explains where future CA integrations should go.
 
-> Historical note: This page was migrated from the former CAClaw fork. Read "CAClaw" here as the OpenClaw CA add-on unless the page is explicitly describing that old fork history.
+The main idea is:
 
+- keep OpenClaw stable
+- add CA-specific capability in clear places
+- do not scatter CA logic everywhere
 
-Future CA integrations should land in explicit seams. This keeps CAClaw additive, reviewable, and easier to sync with upstream.
+## The three main rails
 
-## Default landing zones
+### 1. Skills
+Use a skill when the value is mainly:
 
-- **Skills** for workflow guidance and reusable domain content
-- **Plugins/extensions** for runtime-backed capabilities or provider-style integrations
-- **MCP** for tool-like external service access with explicit configuration and boundaries
-- **Docs/config/UI surfacing** for describing and discovering the integration
+- guidance
+- checklists
+- reusable prompts
+- domain-specific structure
 
-## Do not do this
+### 2. Plugins
+Use a plugin when the value is mainly:
 
-- Do not scatter CA integration logic across unrelated core modules.
-- Do not bypass the documented seams just because a direct patch looks faster.
-- Do not treat real client/compliance integrations as pure copy or UI work.
+- runtime capability
+- reusable product behavior
+- packaged CA functionality that OpenClaw should load directly
 
-## Decision rule
+### 3. MCP
+Use MCP when the value is mainly:
 
-Ask:
+- tool-like external access
+- controlled connection to external systems
+- explicit service boundaries
 
-1. Is this content and guidance only? Use a skill.
-2. Is this a reusable runtime capability? Use a plugin/extension.
-3. Is this an external tool or service boundary? Use MCP if the access pattern fits.
-4. Does the user need a visible entry point or config surface? Document and surface it explicitly.
+## Simple decision rule
+
+Ask this:
+
+1. Is this mostly workflow guidance? → use a skill
+2. Is this a reusable runtime capability? → use a plugin
+3. Is this an external tool or system connection? → use MCP if it fits
+
+## Why this matters
+
+This approach keeps the CA layer:
+
+- easier to maintain
+- safer to review
+- easier to expand later
+- less likely to damage the main OpenClaw product
+

@@ -1,58 +1,45 @@
----
-summary: "Governance rules for future high-trust CA automations in CAClaw"
-read_when:
-  - You are designing future automation for portal, document, reconciliation, or high-trust CA work
-  - You need the Phase 5 automation governance baseline
-title: "CA Automation Governance"
----
+# CA Automation Governance
 
-# CA automation governance
+This page explains an important rule of the add-on:
 
-> Historical note: This page was migrated from the former CAClaw fork. Read "CAClaw" here as the OpenClaw CA add-on unless the page is explicitly describing that old fork history.
+**assist first, automate carefully later.**
 
+For CA work, some tasks are safe to structure and assist.
+Other tasks are too sensitive to automate casually.
 
-CAClaw should assist first. Higher-trust automation should arrive later, with controls.
+## What should be safe to assist now
 
-## Minimum governance expectations
+The add-on is well-suited for:
 
-### Human approval
+- checklists
+- work planning
+- client follow-up drafts
+- review questions
+- document request lists
+- working-paper structure
+- recurring preparation support
 
-Future high-trust automations should require human approval before high-impact actions, especially when client data, portal activity, filings, or irreversible changes are involved.
+## What should not be automated casually
 
-### Exception handling
-
-Every future automation should define:
-
-- what counts as an exception
-- how exceptions are surfaced
-- what the user must review before continuing
-
-### Evidence retention
-
-Future automation flows should make it possible to retain:
-
-- what inputs were used
-- what outputs were produced
-- what approval happened
-- what exceptions occurred
-
-### Access boundaries
-
-Every future automation should state:
-
-- what credentials it uses
-- what systems it can touch
-- how the blast radius is limited
-
-## Unsafe-to-automate-by-default categories
-
-Until stronger validation exists, treat these as unsafe for autonomous execution:
+These areas need strong review and control:
 
 - statutory filing submission
+- final tax positions without CA validation
 - legal assertions without review
-- final tax positions without professional validation
-- sensitive client document changes without explicit approval
+- sensitive client document changes without approval
+- any irreversible action in a portal or external system
 
-## Operating principle
+## Minimum governance rule
 
-Assist and prepare first. Automate later only when the workflow is reviewable, scoped, and auditable.
+Before any high-trust automation is added later, it should support:
+
+- human approval
+- exception handling
+- evidence retention
+- clear access boundaries
+
+## Practical meaning for a CA firm
+
+The add-on should help your team work faster and more consistently.
+It should not silently act like a final decision-maker.
+

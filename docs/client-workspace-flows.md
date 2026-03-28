@@ -1,43 +1,34 @@
----
-summary: "User flows for moving between client context, compliance context, starter workflows, and future integrations"
-read_when:
-  - You are designing CAClaw user journeys around client or compliance work
-  - You need the Phase 5 flow model
-title: "CA Client Workspace Flows"
----
+# CA Client Workspace Flows
 
-# CA client workspace flows
+This page explains two simple flows a CA or CA team can follow.
 
-> Historical note: This page was migrated from the former CAClaw fork. Read "CAClaw" here as the OpenClaw CA add-on unless the page is explicitly describing that old fork history.
+## Flow 1: start from the client
 
+Use this when you already know which client you are working on.
 
-Phase 5 defines two primary user journeys into CAClaw work organization.
+Typical flow:
 
-## Flow 1: Start from a client
+1. open the client context
+2. identify the active work area
+3. open the relevant CA skill
+4. generate the checklist, request list, or workplan
+5. review and continue the work
 
-1. User chooses or lands on a client context.
-2. CAClaw shows the client’s relevant compliance/workstream areas.
-3. User opens the matching starter workflow pack.
-4. User continues the work inside chat, checklists, or future tools.
-5. Later, integrations or evidence can attach back to that same client context.
+## Flow 2: start from the compliance area
 
-Use this when the work starts from: "I need to do something for Client A."
+Use this when your work starts from the task type.
 
-## Flow 2: Start from a compliance area
+Typical flow:
 
-1. User starts from GST, TDS, audit, reporting, or another compliance workstream.
-2. CAClaw shows the related starter pack and common next actions.
-3. User chooses the relevant client or clients for that workstream.
-4. Work history and future integrations can then attach to both the workstream and the client.
+1. start with GST, TDS, audit, reporting, or ROC work
+2. use the relevant CA skill
+3. identify the clients affected
+4. generate follow-up lists or preparation structures
+5. move client by client from that workstream
 
-Use this when the work starts from: "I need to do GST work now."
+## Why this is useful
 
-## Shared rule
+Both flows are normal in a CA office.
 
-The user should never have to choose between client-wise and compliance-wise organization permanently. They are two views into the same work.
+The add-on should support both instead of forcing only one way of working.
 
-## Why this is additive
-
-- The flow begins from the existing overview and skills discovery surfaces.
-- The workflow pack from Phase 4 remains the domain content layer.
-- Future tools and MCP/plugin integrations plug into these flows instead of bypassing them.

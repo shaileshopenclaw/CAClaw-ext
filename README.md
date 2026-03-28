@@ -1,8 +1,47 @@
 # OpenClaw CA Add-on
 
-A practical Chartered Accountant add-on for OpenClaw.
+<p align="center">
+  <img src="assets/caclaw-logo-text-dark.svg" alt="OpenClaw CA Add-on" width="720" />
+</p>
 
-This project adds a CA-focused workflow pack to **OpenClaw** so a Chartered Accountant or CA firm can use OpenClaw for recurring professional work like:
+<p align="center">
+  A practical <strong>Chartered Accountant workflow add-on</strong> for OpenClaw.<br />
+  Turn OpenClaw into a more useful assistant for GST, TDS, audit, income tax, financial reporting, and ROC work.
+</p>
+
+<p align="center">
+  <img alt="OpenClaw plugin" src="https://img.shields.io/badge/OpenClaw-plugin-1d4ed8?style=for-the-badge" />
+  <img alt="Audience" src="https://img.shields.io/badge/Built%20for-Chartered%20Accountants-0f766e?style=for-the-badge" />
+  <img alt="Install" src="https://img.shields.io/badge/Install-git%20clone%20%2B%20openclaw%20plugins%20install-111827?style=for-the-badge" />
+  <img alt="Focus" src="https://img.shields.io/badge/Focus-checklists%20%7C%20review%20support%20%7C%20workflow%20guidance-7c3aed?style=for-the-badge" />
+</p>
+
+---
+
+## Table of contents
+
+- [What this is](#what-this-is)
+- [Who this is for](#who-this-is-for)
+- [What it helps with](#what-it-helps-with)
+- [Quick visual preview](#quick-visual-preview)
+- [What is included](#what-is-included)
+- [Important boundary](#important-boundary)
+- [Before you install](#before-you-install)
+- [How to install from GitHub into OpenClaw](#how-to-install-from-github-into-openclaw)
+- [How to check that it is installed correctly](#how-to-check-that-it-is-installed-correctly)
+- [How to use it in OpenClaw](#how-to-use-it-in-openclaw)
+- [Example prompts for a Chartered Accountant](#example-prompts-for-a-chartered-accountant)
+- [Documentation inside this repository](#documentation-inside-this-repository)
+- [Troubleshooting](#troubleshooting)
+- [Repository and OpenClaw docs](#repository-and-openclaw-docs)
+
+---
+
+## What this is
+
+This repository adds a **CA-focused workflow pack** to **OpenClaw**.
+
+It helps OpenClaw support recurring professional work such as:
 
 - GST working and review
 - TDS working and follow-up
@@ -11,8 +50,14 @@ This project adds a CA-focused workflow pack to **OpenClaw** so a Chartered Acco
 - financial reporting checklists
 - ROC and company-law compliance support
 
-This is **not** a separate app and it is **not** a replacement for professional judgment.
-It is an add-on you install into OpenClaw so OpenClaw can assist you with CA work in a more structured way.
+This is **not** a separate app.
+It is an **add-on plugin** you install into OpenClaw.
+
+So the idea is simple:
+
+- **OpenClaw** remains the main product
+- this repository adds the **CA specialization layer**
+- a CA can use OpenClaw in a more structured, practical way
 
 ---
 
@@ -22,16 +67,14 @@ This add-on is for:
 
 - individual Chartered Accountants
 - CA firms
-- article assistants and teams working under CA supervision
-- firms that want repeatable checklists, prompts, and workflow guidance inside OpenClaw
+- article assistants working under CA supervision
+- teams that want reusable checklists, prompts, review structures, and follow-up workflows
 
 If you already use OpenClaw and want it to feel more useful for real CA work, this add-on is for you.
 
 ---
 
-## What this add-on helps with
-
-After installing it, OpenClaw can help you structure work like:
+## What it helps with
 
 ### GST
 - return-preparation checklists
@@ -72,6 +115,22 @@ After installing it, OpenClaw can help you structure work like:
 
 ---
 
+## Quick visual preview
+
+### 1. OpenClaw with the CA add-on enabled
+
+<p align="center">
+  <img src="assets/preview-dashboard.svg" alt="Illustrative preview of OpenClaw with the CA add-on enabled" width="100%" />
+</p>
+
+### 2. How the CA layer works inside OpenClaw
+
+<p align="center">
+  <img src="assets/preview-workflow.svg" alt="Illustrative preview of how the CA add-on works inside OpenClaw" width="100%" />
+</p>
+
+---
+
 ## What is included
 
 This repository currently includes:
@@ -104,7 +163,7 @@ Think of it as a well-organized CA assistant layer inside OpenClaw.
 
 ---
 
-## What you need before installing
+## Before you install
 
 Before using this add-on, you need:
 
@@ -112,7 +171,7 @@ Before using this add-on, you need:
 2. access to your terminal on the system where OpenClaw runs
 3. Git installed if you want to clone this repository directly from GitHub
 
-If OpenClaw is not installed yet, install OpenClaw first and make sure the command below works:
+First confirm OpenClaw is available:
 
 ```bash
 openclaw --help
@@ -120,7 +179,7 @@ openclaw --help
 
 ---
 
-## Install from GitHub directly
+## How to install from GitHub into OpenClaw
 
 This is the simplest GitHub-based setup.
 
@@ -163,11 +222,9 @@ openclaw gateway restart
 
 After restart, the CA add-on is available to OpenClaw.
 
----
+### Optional: link mode for a working checkout
 
-## Development-style install from GitHub clone
-
-If you want OpenClaw to use this folder directly without copying it, use link mode:
+If you want OpenClaw to use this folder directly without copying it:
 
 ```bash
 git clone https://github.com/shaileshopenclaw/CAClaw-ext.git
@@ -178,11 +235,11 @@ openclaw plugins inspect caclaw
 openclaw gateway restart
 ```
 
-This is useful when you want to keep updating the local checkout.
+This is useful if you want to keep updating your local checkout.
 
 ---
 
-## How to confirm it is installed correctly
+## How to check that it is installed correctly
 
 Run:
 
@@ -224,7 +281,7 @@ A simple practical approach is:
 
 ---
 
-## Example prompts a CA can use
+## Example prompts for a Chartered Accountant
 
 ### GST
 - "Prepare a GST filing checklist for a monthly client with missing purchase data."
@@ -252,7 +309,20 @@ A simple practical approach is:
 
 ---
 
-## If something does not work
+## Documentation inside this repository
+
+If you want more detail after the basic install, start here:
+
+- [`docs/README.md`](docs/README.md) — simple guide to the documentation set
+- [`docs/workflow-entrypoints.md`](docs/workflow-entrypoints.md) — where a CA should start using the add-on
+- [`docs/workflow-pack-structure.md`](docs/workflow-pack-structure.md) — how the CA workflow pack is organized
+- [`docs/client-workspace-model.md`](docs/client-workspace-model.md) — how to think about client-wise and compliance-wise organization
+- [`docs/integration-rails.md`](docs/integration-rails.md) — where future integrations should go
+- [`docs/automation-governance.md`](docs/automation-governance.md) — boundaries for higher-trust automation
+
+---
+
+## Troubleshooting
 
 Try these checks:
 
@@ -272,17 +342,7 @@ If OpenClaw still does not load the add-on, uninstall and reinstall from the clo
 
 ---
 
-## Project direction
-
-The goal is simple:
-
-- keep **OpenClaw** as the main product
-- keep this repository as the **CA specialization layer**
-- make OpenClaw more useful for Chartered Accountants without requiring a deep product fork
-
----
-
-## Repository
+## Repository and OpenClaw docs
 
 GitHub repository:
 
